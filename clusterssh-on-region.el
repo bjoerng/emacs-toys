@@ -79,7 +79,7 @@ Runs COMMAND-TO-EXEC for the WORD-Nth word in every LINE-Mth"
   (progn
     (makunbound 'sconwiemlirphaat-packsize)
     (defvar sconwiemlirphaat-packsize packsize)
-    (makunbound 'sconwiemlirphaat-shell-command)
+    (makunbound 'sconwiemlirphaat-shell-command)d
     (defvar sconwiemlirphaat-shell-command command-to-exec)
     (makunbound 'sconwiemlirphaat-remaining-hosts)
     (defvar sconwiemlirphaat-remaining-hosts
@@ -104,12 +104,17 @@ Runs COMMAND-TO-EXEC for the WORD-Nth word in every LINE-Mth"
   (makunbound 'sconwiemlirphaat-shell-command)
   (makunbound 'sconwiemlirphaat-pack-size))
 
-(defun clusterssh-on-region ()
-  "Sent region to clusterssh"
-  (interactive)
+(defun clusterssh-on-region (word-in-line)
+  "Sent region to clusterssh. If WORD-IN-LINE is given, the
+WORD-IN-LINEth word of each line will be extractet. "
+  (interactive "P")
   (progn
     (makunbound 'sconwiemlirphaat-remaining-hosts)
-    (defvar sconwiemlirphaat-remaining-hosts (get-words-in-region-as-list))
+    (if word-in-line
+	(defvar sconwiemlirphaat-remaining-hosts
+	  (get-mth-word-in-every-nth-line (1- word-in-line) 1))
+      (defvar sconwiemlirphaat-remaining-hosts
+	(get-words-in-region-as-list)))
     (makunbound 'sconwiemlirphaat-shell-command)
     (defvar sconwiemlirphaat-packsize sconwiemlirphaat-packsize-default)
     (defvar sconwiemlirphaat-shell-command "clusterssh")
