@@ -128,7 +128,7 @@ Runs COMMAND-TO-EXEC for the WORD-Nth word in every LINE-Mth"
       (makunbound 'sconwiemlirphaat-remaining-hosts)
       (defvar sconwiemlirphaat-remaining-hosts rectangle-strings)
       (defvar sconwiemlirphaat-packsize sconwiemlirphaat-packsize-default)
-      (sconwiemlirphaat-remaining-hosts nil nil)))
+      (sconwiemlirphaat-sentinel-helper nil nil)))
       
 (global-set-key (kbd "C-c r") 'clusterssh-on-rectangle)
 
