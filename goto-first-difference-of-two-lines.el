@@ -1,6 +1,6 @@
 (defun goto-first-difference-of-two-lines ()
   (interactive)
-  (forward-char
+  (goto-char
    (save-excursion
      (let* ((begin-first-string (progn
 				  (move-beginning-of-line nil)
@@ -23,9 +23,10 @@
 	    (char-cons-with-number (mapcar* #'cons char-cons (number-sequence
 							      0
 							      (cl-list-length char-cons))))
-	    (forward-count (cl-dolist (elem char-cons-with-number)
-			     (when (/= (caar elem) (cdar elem))
-			       (cl-return  (cdr elem))))))
-       forward-count))))
-
+	    (found-difference-position (cl-dolist (elem char-cons-with-number (+ begin-first-string (cl-list-length char-cons)))
+					 (if (/= (caar elem) (cdar elem))
+					     (cl-return (+ begin-first-string (cdr elem)))
+					   ))))
+       found-difference-position))))
+  
 (global-set-key (kbd "C-c d") 'goto-first-difference-of-two-lines)
