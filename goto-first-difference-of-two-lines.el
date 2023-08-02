@@ -28,4 +28,4 @@
 			       (cl-return  (cdr elem))))))
        forward-count))))
 
-(global-set-key (kbd "C-c d") 'clusterssh-on-rectangle)
+(global-set-key (kbd "C-c d") 'goto-first-difference-of-two-lines)
