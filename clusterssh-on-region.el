@@ -47,7 +47,7 @@ be skipped. The next line will be returned and so on."
 (defun sconwiemlirphaat-sentinel-helper (process msg)
   "This function is called to start sconwiemlirphaat and is
 called repeatedly after the shell command to execute is finished,
-with the current pack. It starst the next ececution of
+with the current pack. It starst the next execution of
 SCONWIEMLIRPHAAT-SHELL-COMMANED with the next pack of "
   (let* ((next-pack (seq-take sconwiemlirphaat-remaining-hosts
 			      sconwiemlirphaat-packsize)))
