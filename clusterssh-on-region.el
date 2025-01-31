@@ -16,7 +16,7 @@
 (defun get-every-nth-elem-in-list-with-first (n in-list)
   "Returns every Nth element in IN-LIST. The first element of
 IN-LINE will be returned, the next N minus one will be
-skipped. The next ohne will be returned."
+skipped. The next one will be returned."
   (mapcar #'cdr
 	  (remove-if (lambda (cons-elem) (/= (% (car cons-elem) n) 0))
 		     (mapcar* #'cons
