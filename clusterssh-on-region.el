@@ -4,7 +4,7 @@
 
 ;;; Commentary:
 ;; Known issues:
-;; - Only one ececution of shell commands at a time,
+;; - Only one execution of shell commands at a time,
 ;;   everything else leads to chaos and confusion.
 
 ;;; Code:
