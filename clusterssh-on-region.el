@@ -1,5 +1,5 @@
-;;; clusterssh-on-region.el --- A collection of functions to run clusterssh oder
-;;; other shell commands on a region, a rectacnge or every nth word in
+;;; clusterssh-on-region.el --- A collection of functions to run clusterssh or
+;;; other shell commands on a region, a rectangle or every nth word in
 ;;; the lines in region.
 
 ;;; Commentary:
